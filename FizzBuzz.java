@@ -1,23 +1,33 @@
+import java.util.Objects;
+
 public class FizzBuzz {
-	public static void main(String[] args) {
-		if (args.length == 0) {
-			return;
-		}
-		int max = Integer.parseInt(args[0]);
-		String result = null;
-		for (int i = 0; i < max; i++) {
-			int num = i + 1;
-			result = "";
-			if (num % 3 == 0) {
-				result = result + "Fizz";
+    public static void main(String[] args) {
+
+        if (args.length == 0) {
+            return;
+        }
+        int max = Integer.parseInt(args[0]);
+
+        for (int i = 0; i < max; i++) {
+            int num = i + 1;
+            String result = "";
+
+            if (num % 3 == 0) {
+                result = result + "Fizz";
+            }
+
+            if (num % 4 == 0) {
+                result = result + "test";
+            }
+			if (num % 5 ==0) {
+				result = result + "Buzz";
 			}
-			if (num % 5 == 0) {
-				num = result + "Buzz";
-			}
-			if (result.length() == 0) {
-				result = result + num;
-			}
-			System.out.print(result + " ");
-		}
-	}
+
+            if (Objects.equals(result, "")) {
+                System.out.print(num + " ");
+            } else {
+                System.out.print(result + " ");
+            }
+        }
+    }
 }
